@@ -1,0 +1,46 @@
+.cont-Tareas{
+    width: 500px;
+    min-height: 65px;
+    background-color: #1b1b32;
+    margin: 5px 0;
+    padding: 8px 15px 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+/* cada 3 elementos se va a repetis la proxima secuencia de colores */
+.cont-Tareas:nth-child(3n +1){
+    background-color: #1b1b32;
+}
+.cont-Tareas:nth-child(3n +2){
+    background-color: #2a2a40;
+}
+.cont-Tareas:nth-child(3n +3){
+    background-color: #3b3b4f;
+}
+
+.completada{
+    background-color: #5a01a7;
+    text-decoration: line-through;
+}
+
+.cont-texto{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    /* con este overflow hago que si el texto es muy largo se corte 
+    y pase abajo, por eso puse un min-heigt y no un altura fija */
+    overflow-wrap: anywhere;
+}
+
+.tarea-icon{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
