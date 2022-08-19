@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className='cont-img'>
-        <img src={logo} alt='logo' />
+        {/* <img src={logo} alt='logo' /> */}
       </div>
       <main className='lista-principal'>
         <h1>Mis Tareas</h1>
