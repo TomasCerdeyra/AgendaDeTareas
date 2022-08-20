@@ -21,6 +21,24 @@ const ListaDeTareas = () => {
         }
     }
 
+    /* Funcion para eliminar tareas */
+    const eliminarTarea = id =>{
+        const tareaActualizadas = tareas.filter(tareas => tareas.id !== id);
+        setTareas(tareaActualizadas);
+    }
+
+    /* Funcion para pintar tareas(tareas completadas) */
+    const completarTarea = id =>{
+        const tareasActualizadas =  tareas.map(tarea=> {
+            if (tarea.id === id) {
+                /* con el signo de interrogaciopn cambion(invierto) el bolleano   */
+                tarea.completada = !tarea.completada;
+            }
+            return tarea; 
+        });
+        setTareas(tareasActualizadas);
+    };
+
     return (
         <>
             <Formulario onSubmit={agregarTarea}/>
@@ -32,7 +50,9 @@ const ListaDeTareas = () => {
                             key={tarea.id}
                             id={tarea.id}
                             texto={tarea.texto}
-                            comletada={tarea.comletada}
+                            completada={tarea.completada}
+                            completarTarea = {completarTarea}
+                            eliminarTarea = {eliminarTarea}
                         />
                     )
                 }
